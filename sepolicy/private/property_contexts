@@ -3,3 +3,10 @@
 persist.device_config.tethering.        u:object_r:device_config_tethering_prop:s0
 
 persist.sys.penguin.luminous         u:object_r:penguin_luminous_prop:s0 exact int
+
+# Custom version
+ro.aospa.build.variant                 u:object_r:custom_version_prop:s0
+ro.aospa.device                        u:object_r:custom_version_prop:s0
+ro.aospa.version                       u:object_r:custom_version_prop:s0
+ro.aospa.version.major                 u:object_r:custom_version_prop:s0
+ro.aospa.version.minor                 u:object_r:custom_version_prop:s0
