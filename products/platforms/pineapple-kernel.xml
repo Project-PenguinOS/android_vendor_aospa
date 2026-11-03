@@ -6,7 +6,7 @@
 <manifest>
   <!-- OnePlus Pad 2 kernel_platform: the caihong-clo kernel, devicetree and
        module forks with the OnePlus kleaf glue, on CLO KERNEL.PLATFORM.3.0.r26-00300-kernel.0 tooling -->
-  <project path="kernel_platform/build/kernel" name="caihong-clo/android_kernel_oneplus_sm8650-build" remote="github-ssh" revision="17">
+  <project path="kernel_platform/build/kernel" name="caihong-clo/android_kernel_oneplus_sm8650-build" remote="github-ssh" revision="celerity-clean">
     <linkfile dest="kernel_platform/.find-ignore" src="find-ignore" />
     <linkfile dest="kernel_platform/tools/bazel" src="kleaf/bazel.sh" />
     <linkfile dest="kernel_platform/build/abi" src="abi" />
@@ -30,15 +30,15 @@
     <linkfile dest="kernel_platform/build/static_analysis" src="static_analysis" />
     <linkfile dest="kernel_platform/build/_wrapper_common.sh" src="_wrapper_common.sh" />
   </project>
-  <project path="kernel_platform/oplus" name="caihong-clo/android_kernel_oneplus_sm8650-oplus" remote="github-ssh" revision="17" />
-  <project path="kernel_platform/common" name="caihong-clo/android_kernel_oneplus_sm8650" remote="github-ssh" revision="17">
+  <project path="kernel_platform/oplus" name="caihong-clo/android_kernel_oneplus_sm8650-oplus" remote="github-ssh" revision="celerity-clean" />
+  <project path="kernel_platform/common" name="caihong-clo/android_kernel_oneplus_sm8650" remote="github-ssh" revision="celerity">
     <linkfile dest="kernel_platform/.source_date_epoch_dir" src="." />
   </project>
-  <project path="kernel_platform/msm-kernel" name="caihong-clo/android_kernel_oneplus_sm8650" remote="github-ssh" revision="17">
+  <project path="kernel_platform/msm-kernel" name="caihong-clo/android_kernel_oneplus_sm8650" remote="github-ssh" revision="celerity">
     <linkfile dest="kernel_platform/WORKSPACE" src="bazel.WORKSPACE" />
     <linkfile dest="kernel_platform/build_with_bazel.py" src="build_with_bazel.py" />
   </project>
-  <project path="kernel_platform/sm8650-devicetrees" name="caihong-clo/android_kernel_oneplus_sm8650-devicetrees" remote="github-ssh" revision="17">
+  <project path="kernel_platform/sm8650-devicetrees" name="caihong-clo/android_kernel_oneplus_sm8650-devicetrees" remote="github-ssh" revision="celerity-clean">
     <linkfile dest="vendor/qcom/proprietary/audio-devicetree" src="qcom/audio" />
     <linkfile dest="vendor/qcom/proprietary/bt-devicetree" src="qcom/bt" />
     <linkfile dest="vendor/qcom/proprietary/camera-devicetree" src="qcom/camera" />
@@ -80,7 +80,7 @@
   <project path="kernel/qcom-headers" name="AOSPA/android_kernel_qcom-headers" remote="aospa" revision="calcite" />
   <!-- Out of tree kernel modules (techpacks, oplus, nxp). Checked out under
        vendor/ so the techpack Android.mk files build their DLKMs. -->
-  <project path="vendor/oplus/sm8650-modules" name="caihong-clo/android_kernel_oneplus_sm8650-modules" remote="github-ssh" revision="17">
+  <project path="vendor/oplus/sm8650-modules" name="caihong-clo/android_kernel_oneplus_sm8650-modules" remote="github-ssh" revision="celerity-clean">
     <linkfile dest="kernel_platform/sm8650-modules" src="." />
     <linkfile dest="vendor/nxp/opensource/driver" src="nxp/opensource/driver" />
     <linkfile dest="vendor/oplus/hardware" src="oplus/hardware" />
