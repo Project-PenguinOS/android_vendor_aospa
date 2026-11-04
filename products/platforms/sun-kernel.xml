@@ -5,7 +5,7 @@
 -->
 <manifest>
   <!-- OnePlus 13 kernel_platform -->
-  <project path="kernel_platform/build/kernel" name="Dodge-CLO/android_kernel_oneplus_sm8750-build" remote="github-ssh" revision="celerity-clean">
+  <project path="kernel_platform/build/kernel" name="Dodge-CLO/android_kernel_oneplus_sm8750-build" remote="github-ssh" revision="celerity">
     <linkfile dest="kernel_platform/.find-ignore" src="find-ignore" />
     <linkfile dest="kernel_platform/MODULE.bazel" src="kleaf/bzlmod/bazel.MODULE.bazel" />
     <linkfile dest="kernel_platform/WORKSPACE" src="kleaf/bazel.WORKSPACE" />
@@ -29,14 +29,14 @@
     <linkfile dest="kernel_platform/build/android/merge_dtbs.sh" src="android/merge_dtbs.sh" />
     <linkfile dest="kernel_platform/build/android/prepare_vendor.sh" src="android/prepare_vendor.sh" />
   </project>
-  <project path="kernel_platform/oplus" name="Dodge-CLO/android_kernel_oneplus_sm8750-oplus" remote="github-ssh" revision="celerity-clean" />
-  <project path="kernel_platform/common" name="Dodge-CLO/android_kernel_oneplus_sm8750" remote="github-ssh" revision="celerity-clean">
+  <project path="kernel_platform/oplus" name="Dodge-CLO/android_kernel_oneplus_sm8750-oplus" remote="github-ssh" revision="celerity" />
+  <project path="kernel_platform/common" name="Dodge-CLO/android_kernel_oneplus_sm8750" remote="github-ssh" revision="17">
     <linkfile dest="kernel_platform/.source_date_epoch_dir" src="." />
   </project>
-  <project path="kernel_platform/msm-kernel" name="Dodge-CLO/android_kernel_oneplus_sm8750" remote="github-ssh" revision="celerity-clean">
+  <project path="kernel_platform/msm-kernel" name="Dodge-CLO/android_kernel_oneplus_sm8750" remote="github-ssh" revision="celerity">
     <linkfile dest="kernel_platform/build_with_bazel.py" src="build_with_bazel.py" />
   </project>
-  <project path="kernel_platform/sm8750-devicetrees" name="Dodge-CLO/android_kernel_oneplus_sm8750-devicetrees" remote="github-ssh" revision="celerity-clean">
+  <project path="kernel_platform/sm8750-devicetrees" name="Dodge-CLO/android_kernel_oneplus_sm8750-devicetrees" remote="github-ssh" revision="celerity">
     <linkfile dest="vendor/qcom/proprietary/audio-devicetree" src="qcom/audio" />
     <linkfile dest="vendor/qcom/proprietary/bt-devicetree" src="qcom/bt" />
     <linkfile dest="vendor/qcom/proprietary/camera-devicetree" src="qcom/camera" />
@@ -90,7 +90,7 @@
   <!-- qti_kernel_headers -->
   <project path="kernel/qcom-headers" name="AOSPA/android_kernel_qcom-headers" remote="aospa" revision="calcite" />
   <!-- Out of tree kernel modules -->
-  <project path="vendor/oplus/sm8750-modules" name="Dodge-CLO/android_kernel_oneplus_sm8750-modules" remote="github-ssh" revision="celerity-clean">
+  <project path="vendor/oplus/sm8750-modules" name="Dodge-CLO/android_kernel_oneplus_sm8750-modules" remote="github-ssh" revision="celerity">
     <linkfile dest="kernel_platform/sm8750-modules" src="." />
     <linkfile dest="vendor/nxp/opensource/driver" src="nxp/opensource/driver" />
     <linkfile dest="vendor/oplus/hardware" src="oplus/hardware" />
