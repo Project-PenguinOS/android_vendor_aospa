@@ -6,15 +6,15 @@
 <manifest>
   <include name="../platforms/pineapple.xml" />
   <include name="../platforms/pineapple-kernel.xml" />
-  <project path="device/oneplus/caihong" name="caihong-clo/android_device_oneplus_caihong" remote="github-ssh" revision="celerity-clean" />
+  <project path="device/oneplus/caihong" name="caihong-clo/android_device_oneplus_caihong" remote="github-ssh" revision="celerity" />
   <project path="device/oneplus/caihong-kernel" name="caihong-clo/android_device_oneplus_caihong-kernel" remote="github-ssh" revision="celerity" />
-  <project path="device/oneplus/sm8650-common" name="caihong-clo/android_device_oneplus_sm8650-common" remote="github-ssh" revision="celerity-clean" />
+  <project path="device/oneplus/sm8650-common" name="caihong-clo/android_device_oneplus_sm8650-common" remote="github-ssh" revision="celerity" />
   <project path="hardware/oplus" name="Project-PenguinOS/hardware_oplus" remote="penguin" revision="celerity" />
   <project path="packages/apps/LunarisDolby" name="caihong-clo/packages_apps_LunarisDolby" remote="github-ssh" revision="celerity" />
   <project path="packages/apps/PenguinNotes" name="caihong-clo/packages_apps_PenguinNotes" remote="github-ssh" revision="17" />
   <project path="vendor/oneplus/caihong" name="caihong-clo/proprietary_vendor_oneplus_caihong" remote="github-ssh" revision="celerity" />
   <project path="vendor/oneplus/dolby" name="caihong-clo/proprietary_vendor_oneplus_dolby" remote="github-ssh" revision="celerity" />
-  <project path="vendor/oneplus/sm8650-common" name="caihong-clo/proprietary_vendor_oneplus_sm8650-common" remote="github-ssh" revision="celerity-clean" />
+  <project path="vendor/oneplus/sm8650-common" name="caihong-clo/proprietary_vendor_oneplus_sm8650-common" remote="github-ssh" revision="celerity" />
   <project path="vendor/oplus/camera" name="caihong-clo/vendor_oplus_camera" remote="github-ssh" revision="celerity" />
   <remove-project name="AOSPA/android_kernel_build" />
   <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" clone-depth="1" remote="aosp" revision="main-kernel-2025" />
