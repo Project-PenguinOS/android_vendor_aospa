@@ -5,7 +5,7 @@
 -->
 <manifest>
   <!-- sun (sm8750) vendor HALs from the LineageOS CAF sm8750 branches -->
-  <project path="hardware/qcom/display" name="Dodge-CLO/android_hardware_qcom_display" remote="github-ssh" revision="celerity-clean" />
+  <project path="hardware/qcom/display" name="Project-PenguinOS/hardware_qcom_display" remote="penguin" revision="celerity-8750" />
   <project path="vendor/qcom/opensource/display-core" name="LineageOS/android_vendor_qcom_opensource_display-core" remote="github" revision="lineage-24.0-caf-sm8750" />
   <project path="vendor/qcom/opensource/display-intf" name="LineageOS/android_vendor_qcom_opensource_display-intf" remote="github" revision="lineage-24.0-caf-sm8750" />
   <!-- Needed by the vendor/qcom/common gps-legacy modules -->
