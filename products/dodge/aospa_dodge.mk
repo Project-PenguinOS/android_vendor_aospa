@@ -10,6 +10,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from the dodge device.
 $(call inherit-product, device/oneplus/dodge/device.mk)
 
+AOSPA_BUILDTYPE ?= OFFICIAL
+
 # Inherit from the AOSPA configuration.
 $(call inherit-product, vendor/aospa/target/product/aospa-target.mk)
 
