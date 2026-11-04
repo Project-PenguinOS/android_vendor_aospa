@@ -15,7 +15,6 @@
   <project path="vendor/oneplus/dolby" name="caihong-clo/proprietary_vendor_oneplus_dolby" remote="github-ssh" revision="17-caihong" />
   <project path="vendor/oneplus/sm8650-common" name="caihong-clo/proprietary_vendor_oneplus_sm8650-common" remote="github-ssh" revision="17" />
   <project path="vendor/oplus/camera" name="caihong-clo/vendor_oplus_camera" remote="github-ssh" revision="17" />
-  <project path="vendor/qcom/opensource/libvmmem" name="caihong-clo/android_vendor_qcom_opensource_libvmmem" remote="github-ssh" revision="celerity" />
   <remove-project name="AOSPA/android_kernel_build" />
   <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" clone-depth="1" remote="aosp" revision="main-kernel-2025" />
 </manifest>
