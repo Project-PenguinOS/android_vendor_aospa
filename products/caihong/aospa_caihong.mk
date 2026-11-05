@@ -13,6 +13,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/large_screen_common.mk)
 # Inherit from the caihong device.
 $(call inherit-product, device/oneplus/caihong/device.mk)
 
+AOSPA_BUILDTYPE ?= OFFICIAL
+
 # Inherit from the AOSPA configuration.
 $(call inherit-product, vendor/aospa/target/product/aospa-target.mk)
 
