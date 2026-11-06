@@ -140,6 +140,7 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     PenguinSystemUI
 
 PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.launchercompilerfilter=speed \
     dalvik.vm.systemuicompilerfilter=speed
 
 # Display
