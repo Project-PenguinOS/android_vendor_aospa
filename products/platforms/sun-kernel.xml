@@ -30,7 +30,7 @@
     <linkfile dest="kernel_platform/build/android/prepare_vendor.sh" src="android/prepare_vendor.sh" />
   </project>
   <project path="kernel_platform/oplus" name="Dodge-CLO/android_kernel_oneplus_sm8750-oplus" remote="github-ssh" revision="celerity" />
-  <project path="kernel_platform/common" name="Dodge-CLO/android_kernel_oneplus_sm8750" remote="github-ssh" revision="17">
+  <project path="kernel_platform/common" name="Dodge-CLO/android_kernel_oneplus_sm8750" remote="github-ssh" revision="celerity">
     <linkfile dest="kernel_platform/.source_date_epoch_dir" src="." />
   </project>
   <project path="kernel_platform/msm-kernel" name="Dodge-CLO/android_kernel_oneplus_sm8750" remote="github-ssh" revision="celerity">
