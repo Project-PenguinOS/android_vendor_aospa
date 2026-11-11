@@ -4,37 +4,18 @@
     SPDX-License-Identifier: Apache-2.0
 -->
 <manifest>
-  <!-- OnePlus 13 kernel_platform -->
-  <project path="kernel_platform/build/kernel" name="Dodge-CLO/android_kernel_oneplus_sm8750-build" remote="github-ssh" revision="celerity">
-    <linkfile dest="kernel_platform/.find-ignore" src="find-ignore" />
-    <linkfile dest="kernel_platform/MODULE.bazel" src="kleaf/bzlmod/bazel.MODULE.bazel" />
-    <linkfile dest="kernel_platform/WORKSPACE" src="kleaf/bazel.WORKSPACE" />
-    <linkfile dest="kernel_platform/WORKSPACE.bzlmod" src="kleaf/bzlmod/bazel.WORKSPACE.bzlmod" />
-    <linkfile dest="kernel_platform/tools/bazel" src="kleaf/bazel.sh" />
-    <linkfile dest="kernel_platform/build/abi" src="abi" />
-    <linkfile dest="kernel_platform/build/all-variants.sh" src="all-variants.sh" />
-    <linkfile dest="kernel_platform/build/brunch" src="brunch" />
-    <linkfile dest="kernel_platform/build/build_abl.sh" src="build_abl.sh" />
-    <linkfile dest="kernel_platform/build/BUILD.bazel" src="BUILD.bazel" />
-    <linkfile dest="kernel_platform/build/build_module.sh" src="build_module.sh" />
-    <linkfile dest="kernel_platform/build/build_utils.sh" src="build_utils.sh" />
-    <linkfile dest="kernel_platform/build/kleaf" src="kleaf" />
-    <linkfile dest="kernel_platform/build/multi-switcher.sh" src="multi-switcher.sh" />
-    <linkfile dest="kernel_platform/build/_setup_env.sh" src="_setup_env.sh" />
-    <linkfile dest="kernel_platform/build/static_analysis" src="static_analysis" />
-    <linkfile dest="kernel_platform/build/_wrapper_common.sh" src="_wrapper_common.sh" />
-    <linkfile dest="kernel_platform/build/build-tools/path" src="build-tools/path" />
-    <linkfile dest="kernel_platform/build/android/export_headers.py" src="android/export_headers.py" />
-    <linkfile dest="kernel_platform/build/android/merge_dtbs.py" src="android/merge_dtbs.py" />
-    <linkfile dest="kernel_platform/build/android/merge_dtbs.sh" src="android/merge_dtbs.sh" />
-    <linkfile dest="kernel_platform/build/android/prepare_vendor.sh" src="android/prepare_vendor.sh" />
-  </project>
-  <project path="kernel_platform/oplus" name="Dodge-CLO/android_kernel_oneplus_sm8750-oplus" remote="github-ssh" revision="celerity" />
-  <project path="kernel_platform/common" name="Dodge-CLO/android_kernel_oneplus_sm8750" remote="github-ssh" revision="celerity">
+  <!-- OnePlus 13 kernel_platform, android16-6.12 -->
+  <project path="kernel_platform/common" name="Dodge-CLO/android_kernel_oneplus_sm8750" remote="github-ssh" revision="celerity-6.12">
     <linkfile dest="kernel_platform/.source_date_epoch_dir" src="." />
   </project>
-  <project path="kernel_platform/msm-kernel" name="Dodge-CLO/android_kernel_oneplus_sm8750" remote="github-ssh" revision="celerity">
-    <linkfile dest="kernel_platform/build_with_bazel.py" src="build_with_bazel.py" />
+  <project path="kernel_platform/soc-repo" name="Dodge-CLO/android_kernel_oneplus_sm8750-qcom" remote="github-ssh" revision="celerity-6.12">
+    <linkfile src="bazel.WORKSPACE" dest="kernel_platform/WORKSPACE" />
+    <linkfile src="build_with_bazel.py" dest="kernel_platform/build_with_bazel.py" />
+    <linkfile src="device.bazelrc" dest="kernel_platform/device.bazelrc" />
+    <linkfile src="qcom_build_extensions" dest="kernel_platform/build/qcom_build_extensions" />
+  </project>
+  <project path="kernel_platform/qcom/opensource/devicetree" name="Dodge-CLO/android_kernel_oneplus_sm8750-qcom-devicetree" remote="github-ssh" revision="celerity-6.12">
+    <linkfile src="." dest="kernel_platform/soc-repo/arch/arm64/boot/dts/vendor" />
   </project>
   <project path="kernel_platform/sm8750-devicetrees" name="Dodge-CLO/android_kernel_oneplus_sm8750-devicetrees" remote="github-ssh" revision="celerity-6.12">
     <linkfile dest="vendor/qcom/proprietary/audio-devicetree" src="qcom/audio" />
@@ -54,43 +35,97 @@
     <linkfile dest="vendor/qcom/proprietary/video-devicetree" src="qcom/video" />
     <linkfile dest="vendor/qcom/proprietary/wlan-devicetree" src="qcom/wlan" />
   </project>
-  <!-- CLO kernel_platform tooling, KERNEL.PLATFORM.4.0.r5-00700-kernel.0 -->
-  <project path="kernel_platform/common-modules/trusty" name="kernel/common-modules/trusty" remote="clo-la" revision="d2c32e699ecc0043b54358d7d25dd3cf3d41d434" upstream="refs/heads/ks-kernel.lnx.4.0.r7-rel" />
-  <project path="kernel_platform/prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" remote="clo-la" revision="b46264b70e3cdf70d08c9ae2df6ea3002b242ebc" upstream="refs/heads/ks-kernel.lnx.4.0.r7-rel" />
-  <project path="kernel_platform/build/bazel_common_rules" name="kernel_platform/build/bazel_common_rules" remote="clo-la" revision="3e577f2802048384e9575dd4d0d8864a7a2aa160" upstream="refs/heads/ks-kernel.lnx.4.0.r7-rel" />
-  <project path="kernel_platform/external/bazel-skylib" name="kernel_platform/external/bazel-skylib" remote="clo-la" revision="6b103c40d8113f001475d5e13672922ef2aa0e5a" upstream="refs/heads/ks-kernel.lnx.4.0.r7-rel" />
-  <project path="kernel_platform/external/bazelbuild-apple_support" name="kernel_platform/external/bazelbuild-apple_support" remote="clo-la" revision="f6003e1e3763f8aad9fb9acae79cfa5fff9ae988" upstream="refs/heads/ks-kernel.lnx.4.0.r7-rel" />
-  <project path="kernel_platform/external/bazelbuild-bazel-central-registry" name="kernel_platform/external/bazelbuild-bazel-central-registry" remote="clo-la" revision="7018452ffac4fc070b29d5c5c872bac3c746a06a" upstream="refs/heads/ks-kernel.lnx.4.0.r7-rel" />
-  <project path="kernel_platform/external/bazelbuild-platforms" name="kernel_platform/external/bazelbuild-platforms" remote="clo-la" revision="04d937168075c80205c96f31752000e9de759adb" upstream="refs/heads/ks-kernel.lnx.4.0.r7-rel" />
-  <project path="kernel_platform/external/bazelbuild-rules_cc" name="kernel_platform/external/bazelbuild-rules_cc" remote="clo-la" revision="5d626dcf48e0e97933b48456a86966971799c9e9" upstream="refs/heads/ks-kernel.lnx.4.0.r7-rel" />
-  <project path="kernel_platform/external/bazelbuild-rules_java" name="kernel_platform/external/bazelbuild-rules_java" remote="clo-la" revision="8e548c7053dffd1717d565f0409a88992f401da1" upstream="refs/heads/ks-kernel.lnx.4.0.r7-rel" />
-  <project path="kernel_platform/external/bazelbuild-rules_license" name="kernel_platform/external/bazelbuild-rules_license" remote="clo-la" revision="f578df4fd057ffe2023728444759535685631548" upstream="refs/heads/ks-kernel.lnx.4.0.r7-rel" />
-  <project path="kernel_platform/external/bazelbuild-rules_pkg" name="kernel_platform/external/bazelbuild-rules_pkg" remote="clo-la" revision="059aaa0ece0c03b731076db6300f50f83d25829a" upstream="refs/heads/ks-kernel.lnx.4.0.r7-rel" />
-  <project path="kernel_platform/external/bazelbuild-rules_python" name="kernel_platform/external/bazelbuild-rules_python" remote="clo-la" revision="f71847ac898655b67634bb14e77a7408c4fb5e00" upstream="refs/heads/ks-kernel.lnx.4.0.r7-rel" />
-  <project path="kernel_platform/external/dtc" name="kernel_platform/external/dtc" remote="clo-la" revision="6aa78bad656ffc106bb909774fee5fc2d86d4949" upstream="refs/heads/kernel.build.lnx.2.0.r37-rel" />
-  <project path="kernel_platform/external/libcap" name="kernel_platform/external/libcap" remote="clo-la" revision="8729338c078737da57a8b63ee88016799dfb4cdb" upstream="refs/heads/ks-kernel.lnx.4.0.r7-rel" />
-  <project path="kernel_platform/external/libcap-ng" name="kernel_platform/external/libcap-ng" remote="clo-la" revision="2bcc92ae19481dd2b8d3ce3abdfbbee49261abe6" upstream="refs/heads/ks-kernel.lnx.4.0.r7-rel" />
-  <project path="kernel_platform/external/lz4" name="kernel_platform/external/lz4" remote="clo-la" revision="124599333514066524f55f5f41fbf0d46212e598" upstream="refs/heads/ks-kernel.lnx.4.0.r7-rel" />
-  <project path="kernel_platform/external/pigz" name="kernel_platform/external/pigz" remote="clo-la" revision="9bc9fa17d499ddde88b77820f6d063e16c0cdd42" upstream="refs/heads/ks-kernel.lnx.4.0.r7-rel" />
-  <project path="kernel_platform/external/python/absl-py" name="kernel_platform/external/python/absl-py" remote="clo-la" revision="9ae5a78fc57c3cd539398373ae39601a8b923e62" upstream="refs/heads/ks-kernel.lnx.4.0.r7-rel" />
-  <project path="kernel_platform/external/toybox" name="kernel_platform/external/toybox" remote="clo-la" revision="91f90361fc563025e6d152d68d2072109500d602" upstream="refs/heads/ks-kernel.lnx.4.0.r7-rel" />
-  <project path="kernel_platform/external/virtio-media" name="kernel_platform/external/virtio-media" remote="clo-la" revision="6bf5c3d254fe5efc458ea616d18be131d9230f0e" upstream="refs/heads/ks-kernel.lnx.4.0.r7-rel" />
-  <project path="kernel_platform/external/zlib" name="kernel_platform/external/zlib" remote="clo-la" revision="b34cd2e4371556e913ad9801a924a891c74d1463" upstream="refs/heads/ks-kernel.lnx.4.0.r7-rel" />
-  <project path="kernel_platform/external/zopfli" name="kernel_platform/external/zopfli" remote="clo-la" revision="36c79f00e5229800d2aaa13fc42c301ec8ef1153" upstream="refs/heads/ks-kernel.lnx.4.0.r7-rel" />
-  <project path="kernel_platform/prebuilts/asuite" name="kernel_platform/prebuilts/asuite" remote="clo-la" revision="087ce6a32484394a6b51b09c95a41c84c251b20f" upstream="refs/heads/ks-kernel.lnx.4.0.r7-rel" />
-  <project path="kernel_platform/prebuilts/build-tools" name="kernel_platform/prebuilts/build-tools" remote="clo-la" revision="5c0b50c49d7c958c05cd3050e43f4772003df800" upstream="refs/heads/ks-kernel.lnx.4.0.r7-rel" />
-  <project path="kernel_platform/prebuilts/clang-tools" name="kernel_platform/prebuilts/clang-tools" remote="clo-la" revision="1634c6a556d1f2c24897bf74156c6449486e8941" upstream="refs/heads/ks-kernel.lnx.4.0.r7-rel" />
-  <project path="kernel_platform/prebuilts/jdk/jdk11" name="kernel_platform/prebuilts/jdk/jdk11" remote="clo-la" revision="c6c90521b7c317f13d41bbd9336a8d45ee202cec" upstream="refs/heads/ks-kernel.lnx.4.0.r7-rel" />
-  <project path="kernel_platform/prebuilts/rust" name="kernel_platform/prebuilts/rust" remote="clo-la" revision="442511af884f074018466f85b4daadd4b0ac0050" upstream="refs/heads/ks-kernel.lnx.4.0.r7-rel" />
-  <project path="kernel_platform/tools/mkbootimg" name="kernel_platform/system/tools/mkbootimg" remote="clo-la" revision="f5c284e8998dd8a085cf027bb518b6c2b84cf744" upstream="refs/heads/ks-kernel.lnx.4.0.r7-rel" />
-  <project path="kernel_platform/prebuilts/ndk-r26" name="kernel_platform/toolchain/prebuilts/ndk/r26" remote="clo-la" revision="abad5cbde7eb9684e37d7569810743a8a34826af" upstream="refs/heads/ks-kernel.lnx.4.0.r7-rel" />
-  <project path="kernel_platform/prebuilts/tradefed" name="kernel_platform/tools/tradefederation/prebuilts" remote="clo-la" revision="e2e7716a2a379e71b805b4b824755f1e7a33a1dc" upstream="refs/heads/ks-kernel.lnx.4.0.r7-rel" />
-  <project path="kernel_platform/prebuilts/clang/host/linux-x86" name="kernelplatform/prebuilts-master/clang/host/linux-x86" remote="clo-la" revision="7061673283909f372f4938e45149d23bd10cbd40" upstream="refs/heads/ks-kernel.lnx.4.0.r7-rel" />
-  <project path="kernel_platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="kernelplatform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" remote="clo-la" revision="739d8a41b6096d384338a62995a04739aff8693d" upstream="refs/heads/ks-kernel.lnx.4.0.r7-rel" />
-  <!-- qti_kernel_headers -->
+  <project path="kernel_platform/oplus" name="Dodge-CLO/android_kernel_oneplus_sm8750-oplus" remote="github-ssh" revision="celerity-6.12" />
   <project path="kernel/qcom-headers" name="AOSPA/android_kernel_qcom-headers" remote="aospa" revision="calcite" />
+  <!-- CLO kernel_platform tooling, KERNEL.PLATFORM.5.0.r48-00400-kernel.0 -->
+  <project path="kernel_platform/bootable/bootloader/edk2" name="abl/tianocore/edk2" remote="clo-la" revision="8888623b91bbfc228638ffcd1b0259630e37375e" upstream="refs/heads/uefi.lnx.6.0.r50-rel" />
+  <project path="kernel_platform/bootable/libbootloader" name="kernel_platform/bootable/libbootloader" remote="clo-la" revision="29c9eeb3f240246e17894d41d2abf35f2aea475c" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/bootable/recovery" name="kernel_platform/bootable/recovery" remote="clo-la" revision="9565b5ee790a4ae7acd0c6c04a2b3e0c7eeced3c" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/build/bazel_common_rules" name="kernel_platform/build/bazel_common_rules" remote="clo-la" revision="17ed69d097b3ea08d86ee93d3c898f9b9cc304b4" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/build/kernel" name="kernel/build" remote="clo-la" revision="af73dd2482b6e6d4ea181f378a4b49fb7970655f" upstream="refs/heads/kernel.lnx.6.12.r69-rel">
+    <linkfile src="kleaf/bazel.sh" dest="kernel_platform/tools/bazel" />
+    <linkfile src="build.sh" dest="kernel_platform/build/build.sh" />
+    <linkfile src="build_abi.sh" dest="kernel_platform/build/build_abi.sh" />
+    <linkfile src="build_test.sh" dest="kernel_platform/build/build_test.sh" />
+    <linkfile src="build_utils.sh" dest="kernel_platform/build/build_utils.sh" />
+    <linkfile src="all-variants.sh" dest="kernel_platform/build/all-variants.sh" />
+    <linkfile src="brunch" dest="kernel_platform/build/brunch" />
+    <linkfile src="build_abl.sh" dest="kernel_platform/build/build_abl.sh" />
+    <linkfile src="build_module.sh" dest="kernel_platform/build/build_module.sh" />
+    <linkfile src="android/export_headers.py" dest="kernel_platform/build/android/export_headers.py" />
+    <linkfile src="android/merge_dtbs.py" dest="kernel_platform/build/android/merge_dtbs.py" />
+    <linkfile src="android/merge_dtbs.sh" dest="kernel_platform/build/android/merge_dtbs.sh" />
+    <linkfile src="android/prepare_vendor.sh" dest="kernel_platform/build/android/prepare_vendor.sh" />
+    <linkfile src="BUILD.bazel" dest="kernel_platform/build/BUILD.bazel" />
+    <linkfile src="build-tools/path" dest="kernel_platform/build/build-tools/path" />
+    <linkfile src="config.sh" dest="kernel_platform/build/config.sh" />
+    <linkfile src="envsetup.sh" dest="kernel_platform/build/envsetup.sh" />
+    <linkfile src="_setup_env.sh" dest="kernel_platform/build/_setup_env.sh" />
+    <linkfile src="multi-switcher.sh" dest="kernel_platform/build/multi-switcher.sh" />
+    <linkfile src="kleaf" dest="kernel_platform/build/kleaf" />
+    <linkfile src="abi" dest="kernel_platform/build/abi" />
+    <linkfile src="static_analysis" dest="kernel_platform/build/static_analysis" />
+    <linkfile src="_wrapper_common.sh" dest="kernel_platform/build/_wrapper_common.sh" />
+    <linkfile src="kleaf/bzlmod/bazel.MODULE.bazel" dest="kernel_platform/MODULE.bazel" />
+    <linkfile src="kleaf/bzlmod/bazel.WORKSPACE.bzlmod" dest="kernel_platform/WORKSPACE.bzlmod" />
+  </project>
+  <project path="kernel_platform/common-modules/trusty" name="kernel/common-modules/trusty" remote="clo-la" revision="16b3f415cff236dbad7a729c3bbf2f8191270bc8" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/common-modules/virtio-media" name="kernel_platform/external/virtio-media" remote="clo-la" revision="0997b7d85553daeac2f3cd6c8890a21caaf6319c" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/common-modules/wonder" name="kernel/common-modules/wonder" remote="clo-la" revision="b400a720b1932ced9fde924393f7474a6870c2b6" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/external/arm-trusted-firmware" name="kernel_platform/external/arm-trusted-firmware" remote="clo-la" revision="54fd6939e177f8ff529b10183254802c76df6d08" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/external/avb" name="kernel_platform/external/avb" remote="clo-la" revision="a7c15a79ae2a19e60457adf77e2b0bc89266f163" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/external/bazel-contrib-bazel_features" name="kernel_platform/external/bazel-contrib-bazel_features" remote="clo-la" revision="efd05f4ab23bd961a18766b141cb59fef486e6a3" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/external/bazel-contrib-rules_devicetree" name="kernel_platform/external/bazel-contrib-rules_devicetree" remote="clo-la" revision="1664374016a47b392b1a16df5d460479975c3998" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/external/bazel-skylib" name="kernel_platform/external/bazel-skylib" remote="clo-la" revision="eb08ec4461572fc04c8607b9560744aae9eb0b4c" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/external/bazelbuild-bazel-central-registry" name="kernel_platform/external/bazelbuild-bazel-central-registry" remote="clo-la" revision="b03209299e633756c47dedb8c376f106690b9798" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/external/bazelbuild-platforms" name="kernel_platform/external/bazelbuild-platforms" remote="clo-la" revision="4cb8c634fe0f22ed4e41aeb76de20be73b91b179" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/external/bazelbuild-rules_cc" name="kernel_platform/external/bazelbuild-rules_cc" remote="clo-la" revision="a53b1a1a911222870439fe8c5acd886c011d7106" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/external/bazelbuild-rules_license" name="kernel_platform/external/bazelbuild-rules_license" remote="clo-la" revision="332a8715d3bd6666ce3af0d3c7a98148786d3d13" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/external/bazelbuild-rules_pkg" name="kernel_platform/external/bazelbuild-rules_pkg" remote="clo-la" revision="0095058d7c678a726aab7c5ee55561b021f63115" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/external/bazelbuild-rules_python" name="kernel_platform/external/bazelbuild-rules_python" remote="clo-la" revision="5e331290bb3e11d87524584917aaae19d38fdbbc" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/external/bazelbuild-rules_rust" name="kernel_platform/external/bazelbuild-rules_rust" remote="clo-la" revision="d02a7c28b2fcca9b126de5dae18ae60186b750ee" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/external/bazelbuild-rules_shell" name="kernel_platform/external/bazelbuild-rules_shell" remote="clo-la" revision="50c6599d83e03a746845ddd2b6ba7ff8d5e57fe0" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/external/boringssl" name="kernel_platform/external/boringssl" remote="clo-la" revision="4d28b7aadc6a4b79805802c989d918fc154d80c9" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/external/compiler-rt" name="kernel_platform/external/compiler-rt" remote="clo-la" revision="a36a1bcac7ec7ac9be29d8b0b5e669d53f7886f7" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/external/dtc" name="platform/external/dtc" remote="clo-la" revision="edd020ac81db8c68a7dfd38d5993001aeadedd5e" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/external/elfutils" name="kernel_platform/external/elfutils" remote="clo-la" revision="f881b3cc4b93cf3eff6ff9d97adee8921b21c58a" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/external/googletest" name="kernel_platform/external/googletest" remote="clo-la" revision="cbeab5d01811d23ea488efc07f2c31f7c53024e2" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/external/libcap" name="kernel_platform/external/libcap" remote="clo-la" revision="a88d3c04a41488f5b9d4c0bfdefe7fd0796a61eb" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/external/libcap-ng" name="kernel_platform/external/libcap-ng" remote="clo-la" revision="bd9c1d7d55d5935577c9796bfef244a1b4947f78" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/external/libufdt" name="kernel_platform/system/libufdt" remote="clo-la" revision="83cc614c725cb7d5ca37e66b76bceb8f196b75b1" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/external/ltp" name="kernel_platform/external/ltp" remote="clo-la" revision="111fdb9fd4d921768b26c28c40c37365a028adfc" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/external/lz4" name="kernel_platform/external/lz4" remote="clo-la" revision="756e0bb452b9f7726ad49060b3753058b4611ffa" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/external/open-dice" name="kernel_platform/external/open-dice" remote="clo-la" revision="8c2fbaa0609a655d7e452817f75215c82e93df49" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/external/pigz" name="kernel_platform/external/pigz" remote="clo-la" revision="9bc9fa17d499ddde88b77820f6d063e16c0cdd42" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/external/python/absl-py" name="kernel_platform/external/python/absl-py" remote="clo-la" revision="038d397fec64d739e8ebfa180a00432c49e575fe" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/external/qcom-dtc" name="kernel_platform/external/dtc" remote="clo-la" revision="92532f48874eb59ba34f5d0e0df236fe0ffbfd1e" upstream="refs/heads/kernel.build.lnx.3.0.r49-rel" />
+  <project path="kernel_platform/external/rust/android-crates-io" name="kernel_platform/external/rust/android-crates-io" remote="clo-la" revision="af0dbe9afc41bddbed5512aeac7622de8a3d10d1" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/external/rust/crates/smoltcp" name="kernel_platform/external/rust/crates/smoltcp" remote="clo-la" revision="22ce981acab277a6809f53856ee2733d282bea31" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/external/rust/crates/zune-inflate" name="kernel_platform/external/rust/crates/zune-inflate" remote="clo-la" revision="9a1191933a795a8aedd67e358a9df492d36345d5" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/external/toybox" name="kernel_platform/external/toybox" remote="clo-la" revision="68b30c67b8a49dc6dc287b60cc15f772c6ef83e3" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/external/zlib" name="kernel_platform/external/zlib" remote="clo-la" revision="d4cf1d93aaa32bf6974a3b485cba389cacf209b2" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/external/zopfli" name="kernel_platform/external/zopfli" remote="clo-la" revision="f44ecee1e33238d29aff570c17e1c2296ca1c86e" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/prebuilts/build-tools" name="kernel_platform/prebuilts/build-tools" remote="clo-la" revision="7578befcd7724ed715dc5358402f029b6a6413d2" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel">
+    <linkfile src="." dest="kernel_platform/build/prebuilts/build-tools" />
+  </project>
+  <project path="kernel_platform/prebuilts/clang-tools" name="kernel_platform/prebuilts/clang-tools" remote="clo-la" revision="e119087c11c2894688a0b20a448fb8e875fab330" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel">
+    <linkfile src="." dest="kernel_platform/build/prebuilts/clang-tools" />
+  </project>
+  <project path="kernel_platform/prebuilts/clang/host/linux-x86" name="kernelplatform/prebuilts-master/clang/host/linux-x86" remote="clo-la" revision="892935249976621319cd738fdc69a45c25014bd6" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/prebuilts/fuchsia_sdk" name="kernel_platform/prebuilts/fuchsia_sdk" remote="clo-la" revision="952cb6266a381164d9f7dd06697502093f6512a0" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="kernelplatform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" remote="clo-la" revision="7590272cf08aa8dfbf4d4fe71b0c4a369193437b" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel">
+    <linkfile src="sysroot" dest="kernel_platform/build/build-tools/sysroot" />
+  </project>
+  <project path="kernel_platform/prebuilts/jdk/jdk11" name="kernel_platform/prebuilts/jdk/jdk11" remote="clo-la" revision="427ae6aaa9b0da3f7658df1dfb0745c96a3487f2" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" remote="clo-la" revision="ebbeac5d2db504f4b036b3899499b2b1b0df56e1" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel">
+    <linkfile src="." dest="kernel_platform/build/prebuilts/kernel-build-tools" />
+  </project>
+  <project path="kernel_platform/prebuilts/ndk-r26" name="kernel_platform/toolchain/prebuilts/ndk/r26" remote="clo-la" revision="e535051ebc04204cec44bde38f62385d63180388" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/prebuilts/rust" name="kernel_platform/prebuilts/rust" remote="clo-la" revision="3d32042755fb3407dace251b86cd12a7b253b794" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/system/core" name="kernel_platform/system/core" remote="clo-la" revision="a3b721a32242006b59cb12bd62c9133632af3a2d" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
+  <project path="kernel_platform/tools/mkbootimg" name="kernel_platform/system/tools/mkbootimg" remote="clo-la" revision="fbb061b39bfe93ff7f564f22e5e7ab528e292528" upstream="refs/heads/ks-kernel.lnx.5.0.r80-rel" />
   <!-- Out of tree kernel modules -->
-  <project path="vendor/oplus/sm8750-modules" name="Dodge-CLO/android_kernel_oneplus_sm8750-modules" remote="github-ssh" revision="celerity">
+  <project path="vendor/oplus/sm8750-modules" name="Dodge-CLO/android_kernel_oneplus_sm8750-modules" remote="github-ssh" revision="celerity-6.12">
     <linkfile dest="kernel_platform/sm8750-modules" src="." />
     <linkfile dest="vendor/nxp/opensource/driver" src="nxp/opensource/driver" />
     <linkfile dest="vendor/oplus/hardware" src="oplus/hardware" />
@@ -118,7 +153,6 @@
     <linkfile dest="vendor/qcom/opensource/touch-drivers" src="qcom/opensource/touch-drivers" />
     <linkfile dest="vendor/qcom/opensource/video-driver" src="qcom/opensource/video-driver" />
     <linkfile dest="vendor/qcom/opensource/wlan" src="qcom/opensource/wlan" />
-    <!-- board-defs -->
     <linkfile dest="vendor/qcom/defs/board-defs/vendor/audio_kernel_vendor_board.mk" src="qcom/opensource/audio-kernel/audio_kernel_vendor_board.mk" />
     <linkfile dest="vendor/qcom/defs/board-defs/vendor/bt_kernel_vendor_board.mk" src="qcom/opensource/bt-kernel/bt_kernel_vendor_board.mk" />
     <linkfile dest="vendor/qcom/defs/board-defs/vendor/camera-kernel_board.mk" src="qcom/opensource/camera-kernel/board.mk" />
@@ -138,7 +172,6 @@
     <linkfile dest="vendor/qcom/defs/board-defs/vendor/synx_kernel_board.mk" src="qcom/opensource/synx-kernel/synx_kernel_board.mk" />
     <linkfile dest="vendor/qcom/defs/board-defs/vendor/video_kernel_board.mk" src="qcom/opensource/video-driver/video_kernel_board.mk" />
     <linkfile dest="vendor/qcom/defs/board-defs/vendor/nfc_kernel_dlkm_vendor_board.mk" src="nxp/opensource/driver/nfc_kernel_dlkm_vendor_board.mk" />
-    <!-- product-defs -->
     <linkfile dest="vendor/qcom/defs/product-defs/vendor/audio_kernel_product_board.mk" src="qcom/opensource/audio-kernel/audio_kernel_product_board.mk" />
     <linkfile dest="vendor/qcom/defs/product-defs/vendor/bt_kernel_product_board.mk" src="qcom/opensource/bt-kernel/bt_kernel_product_board.mk" />
     <linkfile dest="vendor/qcom/defs/product-defs/vendor/camera-kernel_product.mk" src="qcom/opensource/camera-kernel/product.mk" />
