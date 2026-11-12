@@ -12,6 +12,7 @@
   <project path="vendor/oneplus/sm8750-common" name="Dodge-CLO/proprietary_vendor_oneplus_sm8750-common" remote="github-ssh" revision="celerity" />
   <project path="vendor/oplus/camera" name="Dodge-CLO/vendor_oplus_camera" remote="github-ssh" revision="celerity" />
   <project path="vendor/oneplus/ir" name="Dodge-CLO/proprietary_vendor_oneplus_ir" remote="github-ssh" revision="celerity" />
+  <project path="vendor/oneplus/dolby" name="caihong-clo/proprietary_vendor_oneplus_dolby" remote="github-ssh" revision="celerity-dodge" />
   <!-- OPlus haptics: vendor.qti.hardware.vibrator.service.oplus -->
   <project path="vendor/qcom/opensource/vibrator" name="LineageOS/android_vendor_qcom_opensource_vibrator" remote="github" revision="lineage-24.0" />
   <remove-project name="AOSPA/android_kernel_build" />
