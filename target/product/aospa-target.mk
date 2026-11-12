@@ -322,7 +322,7 @@ PRODUCT_PACKAGES += \
     ims-ext-common \
     ims_ext_common.xml
 
-ifneq ($(TARGET_NO_TELEPHONY), true)
+# Apps such as Settings link against these, so keep them on Wi-Fi only devices too.
 PRODUCT_PACKAGES += \
     tcmiface \
     telephony-ext \
@@ -335,14 +335,15 @@ PRODUCT_PACKAGES += \
     qti_telephony_utils.xml \
     qti_telephony_utils_prd.xml
 
-# Telephony - AOSP
-PRODUCT_PACKAGES += \
-    Dialer \
-    Stk
-
 PRODUCT_BOOT_JARS += \
     tcmiface \
     telephony-ext
+
+# Telephony - AOSP
+ifneq ($(TARGET_NO_TELEPHONY), true)
+PRODUCT_PACKAGES += \
+    Dialer \
+    Stk
 endif
 
 # TextClassifier
